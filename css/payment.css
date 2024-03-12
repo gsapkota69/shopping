@@ -1,6 +1,7 @@
 head,
         body {
-            background-color: #FFCCBC;
+            background: radial-gradient(#fff, #ffd6d6);
+}
         } 
         
         .container{
@@ -36,6 +37,7 @@ head,
         }
 
         .card-body {
+            margin-top: 40px;
             background-color: #f7f1f1;
         }
 
