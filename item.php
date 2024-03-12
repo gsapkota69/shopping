@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn       = mysqli_connect("localhost", "root", "", "shopping");
+$conn       = mysqli_connect("localhost", "ODBC", "", "shopping");
 $product_id = $_GET["id"]; //Get the id from the URL i.e item.php?id=
 ?>
 
@@ -18,16 +18,16 @@ $product_id = $_GET["id"]; //Get the id from the URL i.e item.php?id=
     <?php
     //Select the product from database based on the id received from the URL
     $result = mysqli_query($conn, "SELECT * FROM `product-details` WHERE id = '$product_id' ");
-    if (mysqli_num_rows($result)) {
+    if (mysqli_num_rows($result)>0) {
         $row                  = mysqli_fetch_assoc($result);
         $product_id           = $row['id'];
         $product_name         = $row['name'];
         $product_image_source = $row['images'];
         $product_price        = $row['price'];
-    ?>
+        ?>
 
-    <!-- Change following to do what you want to do for the given product:  -->
-    
+        <!-- Change following to do what you want to do for the given product:  -->
+
         <a class="col-4" href="./item.php?id=<?php echo ($product_id); ?>">
             <img src="<?php echo ($product_image_source); ?>">
             <h4>

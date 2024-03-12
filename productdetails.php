@@ -1,3 +1,9 @@
+<?php
+session_start();
+$conn       = mysqli_connect("localhost", "ODBC", "", "shopping");
+$product_id = $_GET["id"]; //Get the id from the URL i.e item.php?id=
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +14,11 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
 </head>
 
 <body>
+
   <div class="container">
     <div class="navbar">
       <div class="logo">
@@ -19,7 +27,7 @@
       <nav>
         <ul>
           <li><a href="index.php">Home</a></li>
-          <li><a href="products.html">Products</a></li>
+          <li><a href="products.php">Products</a></li>
           <li><a href="contactus.html">Contact Us</a></li>
           <li><a href="Account">Account</a></li>
         </ul>
@@ -28,32 +36,77 @@
     </div>
   </div>
 
+  <!----------single product details -------->
+
+
+  <?php
+  //Select the product from database based on the id received from the URL
+  $result = mysqli_query($conn, "SELECT * FROM `product-details` WHERE id = '$product_id' ");
+  if (mysqli_num_rows($result) > 0) {
+    $row                  = mysqli_fetch_assoc($result);
+    $product_id           = $row['id'];
+    $product_name         = $row['name'];
+    $product_image_source = $row['images'];
+    $product_price        = $row['price'];
+    ?>
+    <div class="small-container single-product">
+      <div class="row">
+        <div class="col-2">
+          <img src="<?php echo ($product_image_source); ?>" width="100%">
+        </div>
+        <div class="col-2">
+          <p>Home / T-shirt</p>
+          <h1>
+            <?php echo ($product_name); ?>
+          </h1>
+          <h4>
+            <?php echo ($product_price); ?>
+          </h4>
+          <select>
+            <option>Select Size</option>
+            <option>XXL</option>
+            <option>XL</option>
+            <option>Large</option>
+            <option>Medium</option>
+            <option>Small</option>
+          </select>
+          <input type="number" value="1">
+          <a href="" class="btn">Add to Cart</a>
+          <h3>Product Details</h3>
+          <br>
+          <p>Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Laboriosam, sapiente fugit?</p>
+
+        </div>
+      </div>
+    </div>
+  <?php } ?>
+
+  <!-----title-->
   <div class="small-container">
     <div class="row row-2">
-      <h2>All Products</h2>
-      <select>
-        <option>Default Sorting</option>
-        <option>Short by price</option>
-        <option>Short by Popularity</option>
-        <option>Short by rating</option>
-        <option>Short by sale</option>
-      </select>
+      <h2>Related Products</h2>
+      <p>View More</p>
     </div>
+  </div>
+
+
+
+  <div class="small-container">
     <div class="row">
       <?php
-      $conn   = mysqli_connect("localhost", "ODBC", "", "shopping");
-      $result = mysqli_query($conn, "SELECT * FROM `product-details` ");
-
+      //Get 4 items from the database except current one
+      $resultExtra = mysqli_query($conn, "SELECT * FROM `product-details` WHERE NOT id = $product_id  LIMIT 4 "); 
+      
       //Run a while loop to get all items in database
-      while ($row = mysqli_fetch_assoc($result)) {
+      while ($row = mysqli_fetch_assoc($resultExtra)) {
         //Details for each item one by one in the database
         $product_id           = $row['id'];
         $product_name         = $row['name'];
         $product_image_source = $row['images'];
         $product_price        = $row['price'];
         ?>
-        <!-- Product card for the current item/row of the database  -->
-        <a class="col-4" href="./productdetails.php?id=<?php echo ($product_id); ?>">
+        <a class="col-4" href="productdetails.php?id=<?php echo ($product_id); ?>">
           <img src="<?php echo ($product_image_source); ?>">
           <h4>
             <?php echo ($product_name); ?>
@@ -69,16 +122,9 @@
             <?php echo ($product_price); ?>
           </p>
         </a>
+
       <?php } ?>
 
-    </div>
-
-    <div class="page-btn">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>&#8594;</span>
     </div>
   </div>
 
