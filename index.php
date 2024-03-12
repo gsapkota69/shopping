@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,7 @@
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="products.php">Products</a></li>
             <li><a href="contactus.html">Contact Us</a></li>
         </ul>  
         <?php if(isset($_SESSION["id"])){ ?>
@@ -49,8 +53,6 @@
 </div> 
 </div>
 
-<!--------- featured categories 
-    youtube link https://www.youtube.com/watch?v=yQimoqo0-7g&list=PLjwm_8O3suyM_2Lo9aAIw3HqjOPor8j9g  ---------------->
 <div class ="categories">
     <div class="small-container">
         <div class="row">
@@ -67,13 +69,11 @@
     </div>
     
 </div>
- <!----------- featured products
- website reference for images https://www.abercrombie.com/shop/wd/p/ypb-active-cotton-blend-graphic-tee-55135821?categoryId=66909816&faceout=model&seq=07
--->
 
 <div class="small-container">
     <h2 class="title"> Featured Products</h2>
     <div class="row">
+        
         <div class="col-4">
           <img src="./images/product1.avif">
           <h4>Graphite color T-shirt</h4>
@@ -86,6 +86,7 @@
           </div>
           <p>$40</p>
         </div>
+
         <div class="col-4">
             <img src="./images/product2.avif">
             <h4>YPB neoKNIT MAX Popover</h4>
