@@ -11,14 +11,15 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
 
     $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'  ");
-    $row    = mysqli_fetch_assoc($result);
-
+    
     if (mysqli_num_rows($result) > 0) {
+      $row    = mysqli_fetch_assoc($result);
 
         if ($password == $row["password"]) {
             $_SESSION["isAdmin"] = false;
             $_SESSION["id"]    = $row["id"];
             $_SESSION["email"]  = $row["email"];
+            $_SESSION["username"] = $row["username"];
             header("location:index.php");
         } else {
             echo "<script> alert('Wrong Password'); </script>";
