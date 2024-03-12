@@ -37,7 +37,7 @@ session_start();
             <a href="login.php" id="login"><button>Login</button></a>
           <?php } ?>
         </nav>
-        <a href="cart.html"> <img src="./images/cart.png" width="30px" height="30px"></a>
+        <a href="cart.php"> <img src="./images/cart.png" width="30px" height="30px"></a>
       </div>
       <div class="row">
         <div class="col-2">

@@ -2,6 +2,7 @@
 session_start();
 $conn       = mysqli_connect("localhost", "ODBC", "", "shopping");
 $product_id = $_GET["id"]; //Get the id from the URL i.e item.php?id=
+$username   = $_SESSION["username"];
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,10 @@ $product_id = $_GET["id"]; //Get the id from the URL i.e item.php?id=
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
+  <script src="./scripts/product.js"></script>
+  <script>
+    initiateCart('<?php echo $username; ?>');
+  </script>
 </head>
 
 <body>
@@ -32,7 +36,7 @@ $product_id = $_GET["id"]; //Get the id from the URL i.e item.php?id=
           <li><a href="Account">Account</a></li>
         </ul>
       </nav>
-      <a href="cart.html"> <img src="./images/cart.png" width="30px" height="30px"></a>
+      <a href="cart.php"> <img src="./images/cart.png" width="30px" height="30px"></a>
     </div>
   </div>
 
@@ -56,22 +60,22 @@ $product_id = $_GET["id"]; //Get the id from the URL i.e item.php?id=
         </div>
         <div class="col-2">
           <p>Home / T-shirt</p>
-          <h1>
+          <h1 name="product_name">
             <?php echo ($product_name); ?>
           </h1>
-          <h4>
+          <h4 name="product_price">
             <?php echo ($product_price); ?>
           </h4>
-          <select>
-            <option>Select Size</option>
+          <select name="product_size">
+            <option disabled>Select Size</option>
             <option>XXL</option>
             <option>XL</option>
             <option>Large</option>
             <option>Medium</option>
             <option>Small</option>
           </select>
-          <input type="number" value="1">
-          <a href="" class="btn">Add to Cart</a>
+          <input type="number" value="1" name="product_quantity">
+          <button class="btn" onclick="addToCart('<?php echo $username; ?>')">Add to Cart</button>
           <h3>Product Details</h3>
           <br>
           <p>Lorem ipsum dolor sit, amet consectetur
@@ -96,8 +100,8 @@ $product_id = $_GET["id"]; //Get the id from the URL i.e item.php?id=
     <div class="row">
       <?php
       //Get 4 items from the database except current one
-      $resultExtra = mysqli_query($conn, "SELECT * FROM `product-details` WHERE NOT id = $product_id  LIMIT 4 "); 
-      
+      $resultExtra = mysqli_query($conn, "SELECT * FROM `product-details` WHERE NOT id = $product_id  LIMIT 4 ");
+
       //Run a while loop to get all items in database
       while ($row = mysqli_fetch_assoc($resultExtra)) {
         //Details for each item one by one in the database
