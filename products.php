@@ -66,7 +66,7 @@
     </div>
     <div class="row">
       <?php
-      $conn   = mysqli_connect("localhost", "ODBC", "", "shopping");
+      $conn   = mysqli_connect("localhost", "root", "", "shopping");
       $result = mysqli_query($conn, "SELECT * FROM `product-details` ");
 
       //Run a while loop to get all items in database
