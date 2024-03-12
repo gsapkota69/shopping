@@ -17,7 +17,7 @@
         <nav>
           <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="products.php">Products</a></li>
             <li><a href="contactus.html">Contact Us</a></li>
             <li><a href="Account">Account</a></li>
           </ul>        
