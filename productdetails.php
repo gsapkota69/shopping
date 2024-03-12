@@ -74,7 +74,7 @@ $username   = $_SESSION["username"];
             <option>Medium</option>
             <option>Small</option>
           </select>
-          <input type="number" value="1" name="product_quantity">
+          <input type="number" value="1" min="1" name="product_quantity">
           <button class="btn" onclick="addToCart('<?php echo $username; ?>')">Add to Cart</button>
           <h3>Product Details</h3>
           <br>

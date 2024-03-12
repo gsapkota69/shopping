@@ -57,10 +57,12 @@ $username = $_SESSION["username"];
             </tr>
           </thead class="text-center">
           <tbody id="tableBody">
-            <script>loadCart('<?php echo $username; ?>')</script>
-          </tbody>
-        </table>
-      </div>
+            </tbody>
+          </table>
+        </div>
+        <a class="text-center border" id="paymentButton"
+        style="text-decoration: none; width: fit-content; margin: 10px; ; color: white; border-radius: 8px;; padding: 10px 40px; background-color: lightblue; cursor: pointer; " href="payment.php?cost=">Pay</a>
+        <script>loadCart('<?php echo $username; ?>')</script>
     </div>
   </div>
 

@@ -64,14 +64,16 @@ function loadCart(username) {
     let dataInCart = "";
 
     let cartArray = JSON.parse(localStorage.getItem("cart"));
-    console.log(cartArray);
+    let totalCost = 0;
+    let totalQuantity = 0;
     let numOfItem = 0;
     let storedCart = cartArray[username];
-    console.log(cartArray[username]);
     storedCart.forEach((product) => {
         let rate = +product.price.slice(1);
         let quantity = +product.quantity;
         let price = rate * quantity;
+        totalQuantity += quantity;
+        totalCost += price;
         dataInCart += `
         <tr>
             <th scope="row">${++numOfItem}</th>
@@ -83,5 +85,7 @@ function loadCart(username) {
         </tr>
         `;
     });
+    document.getElementById("paymentButton").href =
+        "payment.php?cost=" + totalCost + "&quantity=" + totalQuantity;
     tableBody.innerHTML = dataInCart;
 }
