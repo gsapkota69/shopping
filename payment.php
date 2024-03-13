@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="numbr mb-3">
                         <i class=" col-1 fas fa-credit-card text-muted p-0"></i>
                         <input class="col-10 p-0" type="text" placeholder="Card Number" name="pin" required
-                            pattern="\d{16}">
+                            pattern="\d{16}" maxlength="16">
                     </div>
                     <div class="line2 col-lg-12 col-12 mb-4">
                         <i class="col-1 far fa-calendar-minus text-muted p-0"></i>
@@ -89,10 +89,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
                 <div class="footer text-center p-0">
-                    <div class="col-lg-12 col-12 p-0">
-                        <!-- Add js client side verification yourself! -->
-                        <input type="submit" name="submit" value="Order Now" class="order">
-                    </div>
+                    <input type="submit" name="submit" value="Order Now" class="col-lg-12 col-12 p-0">
+                    <!-- Add js client side verification yourself! -->
+                    <!-- <input type="submit" name="submit" value="Order Now" class="order"> -->
+                    </input>
                 </div>
             </div>
         </div>
