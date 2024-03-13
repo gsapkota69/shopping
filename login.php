@@ -2,9 +2,9 @@
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "shopping");
 
-// if (!empty($_SESSION["id"])) {
-//     header("location:index.php");
-// }
+if (!empty($_SESSION["id"])) {
+  header("location:index.php");
+}
 if (isset($_POST['submit'])) {
 
   $username = $_POST['username'];
@@ -21,9 +21,9 @@ if (isset($_POST['submit'])) {
       $_SESSION["email"]    = $row["email"];
       $_SESSION["username"] = $row["username"];
 
-      header("location:index.php");
+      header("Location:index.php");
     } else {
-      echo "<script> alert('Wrong Password'); </>";
+      echo "<script> alert('Wrong Password'); </script>";
     }
 
   } else {
