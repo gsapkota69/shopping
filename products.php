@@ -28,33 +28,6 @@
     </div>
   </div>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Products - Online Clothing Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="navbar">
-        <div class="logo">
-          <img src="./images/logoo.jpg" width="125px">
-        </div>
-        <nav>
-          <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
-            <li><a href="Account">Account</a></li>
-          </ul>
-        </nav>
-        <a href="cart.php"> <img src="./images/cart.png" width="30px" height="30px"></a>
-      </div>
-    </div>
 
     <div class="small-container">
       <div class="row row-2">
