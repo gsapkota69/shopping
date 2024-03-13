@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
       $_SESSION["email"]    = $row["email"];
       $_SESSION["username"] = $row["username"];
 
-      header("location:index.php");
+      header("Location:index.php");
     } else {
       echo "<script> alert('Wrong Password'); </>";
     }
