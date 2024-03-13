@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['id'])) {
+    header('location:login.php');
+}
 $totalCost  = $_GET['cost'];
 $totalItems = $_GET['quantity'];
 

@@ -1,8 +1,8 @@
 <?php
 session_start();
-// if (!isset($_SESSION['id']) || $_SESSION['isAdmin'] != true) {
-//     header('location:login.php');
-// }
+if (!isset($_SESSION['id']) || $_SESSION['isAdmin'] != true) {
+    header('location:login.php');
+}
 ?>
 
 
