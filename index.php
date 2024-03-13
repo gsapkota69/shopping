@@ -29,12 +29,12 @@ session_start();
             <li><a href="contactus.html">Contact Us</a></li>
           </ul>
           <?php if (isset($_SESSION["id"])) { ?>
-              <a href="logout.php" id="login"><button>Logout</button></a>
-              <?php if ($_SESSION["isAdmin"] == true) { ?>
-                  <a href="admin.php" id="login"><button>Admin</button></a>
-              <?php }
+            <a href="logout.php" id="login"><button>Logout</button></a>
+            <?php if ($_SESSION["isAdmin"] == true) { ?>
+              <a href="admin.php" id="login"><button>Admin</button></a>
+            <?php }
           } else { ?>
-              <a href="login.php" id="login"><button>Login</button></a>
+            <a href="login.php" id="login"><button>Login</button></a>
           <?php } ?>
         </nav>
         <a href="cart.php"> <img src="./images/cart.png" width="30px" height="30px"></a>
@@ -90,22 +90,22 @@ session_start();
           $product_image_source = $row['images'];
           $product_price        = $row['price'];
           ?>
-            <a class="col-4" href="productdetails.php?id=<?php echo ($product_id); ?>">
-              <img src="<?php echo ($product_image_source); ?>">
-              <h4>
-                <?php echo ($product_name); ?>
-              </h4>
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <p>
-                <?php echo ($product_price); ?>
-              </p>
-            </a>
+          <a class="col-4" href="productdetails.php?id=<?php echo ($product_id); ?>">
+            <img src="<?php echo ($product_image_source); ?>">
+            <h4>
+              <?php echo ($product_name); ?>
+            </h4>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <p>
+              <?php echo ($product_price); ?>
+            </p>
+          </a>
         <?php } ?>
 
       </div>
@@ -125,22 +125,22 @@ session_start();
           $product_image_source = $row['images'];
           $product_price        = $row['price'];
           ?>
-            <a class="col-4" href="productdetails.php?id=<?php echo ($product_id); ?>">
-              <img src="<?php echo ($product_image_source); ?>">
-              <h4>
-                <?php echo ($product_name); ?>
-              </h4>
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <p>
-                <?php echo ($product_price); ?>
-              </p>
-            </a>
+          <a class="col-4" href="productdetails.php?id=<?php echo ($product_id); ?>">
+            <img src="<?php echo ($product_image_source); ?>">
+            <h4>
+              <?php echo ($product_name); ?>
+            </h4>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <p>
+              <?php echo ($product_price); ?>
+            </p>
+          </a>
         <?php } ?>
 
       </div>

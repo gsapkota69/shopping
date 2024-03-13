@@ -53,37 +53,37 @@ $username   = $_SESSION["username"];
     $product_image_source = $row['images'];
     $product_price        = $row['price'];
     ?>
-      <div class="small-container single-product">
-        <div class="row">
-          <div class="col-2">
-            <img src="<?php echo ($product_image_source); ?>" width="100%">
-          </div>
-          <div class="col-2">
-            <p>Home / T-shirt</p>
-            <h1 name="product_name">
-              <?php echo ($product_name); ?>
-            </h1>
-            <h4 name="product_price">
-              <?php echo ($product_price); ?>
-            </h4>
-            <select name="product_size">
-              <option disabled>Select Size</option>
-              <option>XXL</option>
-              <option>XL</option>
-              <option>Large</option>
-              <option>Medium</option>
-              <option>Small</option>
-            </select>
-            <input type="number" value="1" min="1" name="product_quantity">
-            <button class="btn" onclick="addToCart('<?php echo $username; ?>')">Add to Cart</button>
-            <h3>Product Details</h3>
-            <br>
-            <p>Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Laboriosam, sapiente fugit?</p>
+    <div class="small-container single-product">
+      <div class="row">
+        <div class="col-2">
+          <img src="<?php echo ($product_image_source); ?>" width="100%">
+        </div>
+        <div class="col-2">
+          <p>Home / T-shirt</p>
+          <h1 name="product_name">
+            <?php echo ($product_name); ?>
+          </h1>
+          <h4 name="product_price">
+            <?php echo ($product_price); ?>
+          </h4>
+          <select name="product_size">
+            <option disabled>Select Size</option>
+            <option>XXL</option>
+            <option>XL</option>
+            <option>Large</option>
+            <option>Medium</option>
+            <option>Small</option>
+          </select>
+          <input type="number" value="1" min="1" name="product_quantity">
+          <button class="btn" onclick="addToCart('<?php echo $username; ?>')">Add to Cart</button>
+          <h3>Product Details</h3>
+          <br>
+          <p>Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Laboriosam, sapiente fugit?</p>
 
-          </div>
         </div>
       </div>
+    </div>
   <?php } ?>
 
   <!-----title-->
@@ -110,22 +110,22 @@ $username   = $_SESSION["username"];
         $product_image_source = $row['images'];
         $product_price        = $row['price'];
         ?>
-          <a class="col-4" href="productdetails.php?id=<?php echo ($product_id); ?>">
-            <img src="<?php echo ($product_image_source); ?>">
-            <h4>
-              <?php echo ($product_name); ?>
-            </h4>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-            </div>
-            <p>
-              <?php echo ($product_price); ?>
-            </p>
-          </a>
+        <a class="col-4" href="productdetails.php?id=<?php echo ($product_id); ?>">
+          <img src="<?php echo ($product_image_source); ?>">
+          <h4>
+            <?php echo ($product_name); ?>
+          </h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>
+            <?php echo ($product_price); ?>
+          </p>
+        </a>
 
       <?php } ?>
 

@@ -52,23 +52,23 @@
         $product_image_source = $row['images'];
         $product_price        = $row['price'];
         ?>
-          <!-- Product card for the current item/row of the database  -->
-          <a class="col-4" href="./productdetails.php?id=<?php echo ($product_id); ?>">
-            <img src="<?php echo ($product_image_source); ?>">
-            <h4>
-              <?php echo ($product_name); ?>
-            </h4>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-            </div>
-            <p>
-              <?php echo ($product_price); ?>
-            </p>
-          </a>
+        <!-- Product card for the current item/row of the database  -->
+        <a class="col-4" href="./productdetails.php?id=<?php echo ($product_id); ?>">
+          <img src="<?php echo ($product_image_source); ?>">
+          <h4>
+            <?php echo ($product_name); ?>
+          </h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>
+            <?php echo ($product_price); ?>
+          </p>
+        </a>
       <?php } ?>
 
     </div>
