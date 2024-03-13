@@ -79,7 +79,7 @@ session_start();
     <div class="row">
       <div class="row">
         <?php
-        $conn   = mysqli_connect("localhost", "ODBC", "", "shopping");
+        $conn   = mysqli_connect("localhost", "root", "", "shopping");
         $result = mysqli_query($conn, "SELECT * FROM `product-details` ORDER BY id ASC LIMIT 8");
 
         //Run a while loop to get all items in database
@@ -114,7 +114,7 @@ session_start();
     <div class="row">
       <div class="row">
         <?php
-        $conn   = mysqli_connect("localhost", "ODBC", "", "shopping");
+        $conn   = mysqli_connect("localhost", "root", "", "shopping");
         $result = mysqli_query($conn, "SELECT * FROM `product-details` ORDER BY id DESC LIMIT 8 ");
 
         //Run a while loop to get all items in database

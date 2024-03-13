@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn       = mysqli_connect("localhost", "ODBC", "", "shopping");
+$conn       = mysqli_connect("localhost", "root", "", "shopping");
 $product_id = $_GET["id"]; //Get the id from the URL i.e item.php?id=
 $username   = $_SESSION["username"];
 ?>

@@ -1,8 +1,8 @@
 <?php
 session_start();
-// if (!isset($_SESSION['id']) || $_SESSION['isAdmin'] != true) {
-//     header('location:login.php');
-// }
+if (!isset($_SESSION['id']) || $_SESSION['isAdmin'] != true) {
+    header('location:login.php');
+}
 ?>
 
 
@@ -67,7 +67,7 @@ session_start();
                             <span class="line"></span><span class="line"></span><span class="line"></span><span
                                 class="line"></span>
                             <?php
-                            $conn        = mysqli_connect("localhost", "ODBC", "", "shopping");
+                            $conn        = mysqli_connect("localhost", "root", "", "shopping");
                             $table_sql   = "SELECT * FROM `users`";
                             $table_query = mysqli_query($conn, $table_sql);
                             if (!mysqli_num_rows($table_query) > 0) {
@@ -129,7 +129,7 @@ session_start();
                                     <span class="line"></span><span class="line"></span><span class="line"></span><span
                                         class="line"></span>
                                     <?php
-                                    $conn        = mysqli_connect("localhost", "ODBC", "", "shopping");
+                                    $conn        = mysqli_connect("localhost", "root", "", "shopping");
                                     $table_sql   = "SELECT * FROM `product-details`";
                                     $table_query = mysqli_query($conn, $table_sql);
                                     if (!mysqli_num_rows($table_query) > 0) {
@@ -188,7 +188,7 @@ session_start();
                                 <span class="line"></span><span class="line"></span><span class="line"></span><span
                                     class="line"></span>
                                 <?php
-                                $conn        = mysqli_connect("localhost", "ODBC", "", "shopping");
+                                $conn        = mysqli_connect("localhost", "root", "", "shopping");
                                 $table_sql   = "SELECT * FROM `payment`";
                                 $table_query = mysqli_query($conn, $table_sql);
                                 if (!mysqli_num_rows($table_query) > 0) {
@@ -242,7 +242,7 @@ session_start();
                             <span class="line"></span><span class="line"></span><span class="line"></span><span
                                 class="line"></span>
                             <?php
-                            $conn        = mysqli_connect("localhost", "ODBC", "", "shopping");
+                            $conn        = mysqli_connect("localhost", "root", "", "shopping");
                             $table_sql   = "SELECT * FROM `admin`";
                             $table_query = mysqli_query($conn, $table_sql);
                             if (!mysqli_num_rows($table_query) > 0) {

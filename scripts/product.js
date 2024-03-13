@@ -14,6 +14,10 @@ function initiateCart(username) {
 }
 
 function addToCart(username) {
+    if (username == "") {
+        alert("Login to proceed!");
+        return;
+    }
     let name = document.getElementsByName("product_name")[0].innerText;
     let price = document.getElementsByName("product_price")[0].innerText;
     let quantity = document.getElementsByName("product_quantity")[0].value;
