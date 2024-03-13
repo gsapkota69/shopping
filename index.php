@@ -42,9 +42,11 @@ session_start();
       <div class="row">
         <div class="col-2">
           <h1>Online Clothing Store</h1>
-          <p>Our online clothing store offers a curated collection of trendy and affordable fashion pieces for men and women. <br>
-           Whether you're looking for everyday essentials or statement pieces for special occasions, our store has something for everyone.<br>
-          Discover your style with our diverse selection of clothing and accessories, all just a click away.</p>
+          <p>Our online clothing store offers a curated collection of trendy and affordable fashion pieces for men and
+            women. <br>
+            Whether you're looking for everyday essentials or statement pieces for special occasions, our store has
+            something for everyone.<br>
+            Discover your style with our diverse selection of clothing and accessories, all just a click away.</p>
           <a href="" class="btn">Explore Now &#8594;</a>
         </div>
         <div class="col-2">
@@ -77,7 +79,7 @@ session_start();
     <div class="row">
       <div class="row">
         <?php
-        $conn   = mysqli_connect("localhost", "root", "", "shopping");
+        $conn   = mysqli_connect("localhost", "ODBC", "", "shopping");
         $result = mysqli_query($conn, "SELECT * FROM `product-details` ORDER BY id ASC LIMIT 8");
 
         //Run a while loop to get all items in database
@@ -112,7 +114,7 @@ session_start();
     <div class="row">
       <div class="row">
         <?php
-        $conn   = mysqli_connect("localhost", "root", "", "shopping");
+        $conn   = mysqli_connect("localhost", "ODBC", "", "shopping");
         $result = mysqli_query($conn, "SELECT * FROM `product-details` ORDER BY id DESC LIMIT 8 ");
 
         //Run a while loop to get all items in database

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "shopping");
+$conn = mysqli_connect("localhost", "ODBC", "", "shopping");
 
 if (!empty($_SESSION["id"])) {
   header("location:index.php");
