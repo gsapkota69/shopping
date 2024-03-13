@@ -1,6 +1,10 @@
 <?php
 session_start();
-$username = $_SESSION["username"];
+if ($_SESSION["username"] != null) {
+  $username = $_SESSION["username"];
+} else {
+  $username = "";
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,10 +13,10 @@ $username = $_SESSION["username"];
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cart</title>
+  <title>Cart</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <script src="./scripts/product.js"></script>
 </head>
 
@@ -26,6 +30,7 @@ $username = $_SESSION["username"];
         <li><a href="index.php">Home</a></li>
         <li><a href="products.php">Products</a></li>
         <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="Account">Account</a></li>
       </ul>
       <?php if (isset($_SESSION["id"])) { ?>
         <a href="logout.php" id="login"><button>Logout</button></a>
@@ -39,7 +44,7 @@ $username = $_SESSION["username"];
     <a href="cart.php"> <img src="./images/cart.png" width="30px" height="30px"></a>
   </div>
   <div class="container">
-    <div class="row">
+    <div class="row" style="flex-direction: column;">
       <div class="col-lg-12 text-center border rounderd bd-light my-5">
         <h1>My Cart</h1>
       </div>
@@ -57,12 +62,13 @@ $username = $_SESSION["username"];
             </tr>
           </thead class="text-center">
           <tbody id="tableBody">
-            </tbody>
-          </table>
-        </div>
-        <a class="text-center border" id="paymentButton"
-        style="text-decoration: none; width: fit-content; margin: 10px; ; color: white; border-radius: 8px;; padding: 10px 40px; background-color: lightblue; cursor: pointer; " href="payment.php?cost=">Pay</a>
-        <script>loadCart('<?php echo $username; ?>')</script>
+          </tbody>
+        </table>
+      </div>
+      <a class="text-center border" id="paymentButton"
+        style="text-decoration: none; width: fit-content; margin: 10px; ; color: white; border-radius: 8px;; padding: 10px 40px; background-color: lightblue; cursor: pointer; "
+        href="payment.php?cost=">Pay</a>
+      <script>loadCart('<?php echo $username; ?>')</script>
     </div>
   </div>
 

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +25,14 @@
           <li><a href="contactus.html">Contact Us</a></li>
           <li><a href="Account">Account</a></li>
         </ul>
+        <?php if (isset($_SESSION["id"])) { ?>
+          <a href="logout.php" id="login"><button>Logout</button></a>
+          <?php if ($_SESSION["isAdmin"] == true) { ?>
+            <a href="admin.php" id="login"><button>Admin</button></a>
+          <?php }
+        } else { ?>
+          <a href="login.php" id="login"><button>Login</button></a>
+        <?php } ?>
       </nav>
       <a href="cart.php"> <img src="./images/cart.png" width="30px" height="30px"></a>
     </div>
