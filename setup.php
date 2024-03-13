@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost";
-$username   = "ODBC";
+$username   = "root";
 $password   = "";
 
 // Create connection

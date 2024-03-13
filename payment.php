@@ -8,7 +8,7 @@ $totalItems = $_GET['quantity'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Connect to the database
-    $db = new mysqli('localhost', 'ODBC', '', 'shopping');
+    $db = new mysqli('localhost', 'root', '', 'shopping');
 
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
