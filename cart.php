@@ -58,7 +58,7 @@ if (isset($_SESSION["username"])) {
               <th scope="col">Quantity</th>
               <th scope="col">Rate</th>
               <th scope="col">Price</th>
-
+              <th scope="col">Action</th>
             </tr>
           </thead class="text-center">
           <tbody id="tableBody">
