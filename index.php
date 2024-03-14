@@ -26,7 +26,7 @@ session_start();
           <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="products.php">Products</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="contactus.php">Contact Us</a></li>
           </ul>
           <?php if (isset($_SESSION["id"])) { ?>
             <a href="logout.php" id="login"><button>Logout</button></a>
