@@ -86,10 +86,28 @@ function loadCart(username) {
             <td>${quantity}</td>
             <td>${rate}</td>
             <td>${price}</td>
+            <td><button style="width: 50%;background: none;border: 0;" onclick='removeFromCart("${username}", "${
+            product.name
+        }", "${
+            product.size
+        }")'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></button></td>
         </tr>
         `;
     });
     document.getElementById("paymentButton").href =
         "payment.php?cost=" + totalCost + "&quantity=" + totalQuantity;
     tableBody.innerHTML = dataInCart;
+}
+
+function removeFromCart(username, productName, productSize) {
+    let cartArray = JSON.parse(localStorage.getItem("cart"));
+    let storedCart = cartArray[username];
+    let newCart = storedCart.filter((product) => {
+        return product.name != productName || product.size != productSize;
+    });
+    cartArray[username] = newCart;
+    localStorage.setItem("cart", JSON.stringify(cartArray));
+    alert("Removed from cart!");
+    loadCart(username);
+    return;
 }
